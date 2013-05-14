@@ -46,12 +46,9 @@
 						   this.UserName,
                            this.DateTime,
 						   this.Preview,  
-                           "<a href=ViewArticle.html?Id="+ ArticleID+">"View Full Article</a>"                         
-									  
-						   
-                        ]);
+                           "<a href=ViewArticle.html?Id="+ ArticleID+">"View Full Article"</a>"]);
+                        
                 });
-				
   				$('#TeamArticle').dataTable({ //UserGrid is the id of the table
                     'aaData': dtData,                   
 
@@ -63,7 +60,7 @@
 		  var querystring= getUrlVars()["Id"];querystring= querystring.replace("%20", " ");
 	     Paramdata={"teamId":querystring,"status":"confirmed"}
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/TeamBuilder.asmx/UsersOnTeamsWithProfile',
+                url: 'http://2bvision.com/Kids2proSports/TeamBuilder.asmx/UsersOnTeamsWithProfile',
                 type: 'POST',
                 data: JSON.stringify(Paramdata),
                 contentType: "application/json; charset=utf-8",
@@ -88,7 +85,7 @@
 		$.ajax(
 		{
 		type: "POST",
-		url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/GetBestFitTeamName",
+		url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/GetBestFitTeamName",
 		data:JSON.stringify(Paramdata),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
@@ -112,7 +109,7 @@
 		$.ajax(
 		{
 		type: "POST",
-		url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/GetTeamImage",
+		url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/GetTeamImage",
 		data:JSON.stringify(Paramdata),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
@@ -136,7 +133,7 @@ function GetLeftColumn() {
 		$.ajax(
 		{
 		type: "POST",
-		url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/GetLeftColumn",
+		url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/GetLeftColumn",
 		data:JSON.stringify(Paramdata),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
@@ -159,7 +156,7 @@ function RenderNextEvent() {
 		$.ajax(
 		{
 		type: "POST",
-		url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/RenderNextEvent",
+		url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/RenderNextEvent",
 		data:JSON.stringify(Paramdata),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
@@ -182,7 +179,7 @@ function RenderNextEvent() {
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
+    url: "http://2bvision.com/Kids2proSports/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
     data: "{}",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -208,7 +205,7 @@ function RenderNextEvent() {
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetLeaderBoard",
+    url: "http://2bvision.com/Kids2proSports/AdvertisementManagerService.asmx/GetLeaderBoard",
     data: "{}",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -233,7 +230,7 @@ function RenderNextEvent() {
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/GetTeamInfo",
+    url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/GetTeamInfo",
     data: JSON.stringify(Paramdata),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -256,7 +253,7 @@ function RenderNextEvent() {
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/TeamBuilder.asmx/GetTeamInfo",
+    url: "http://2bvision.com/Kids2proSports/TeamBuilder.asmx/GetTeamInfo",
     data: JSON.stringify(Paramdata),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -277,7 +274,7 @@ function RenderNextEvent() {
     </script>
 </head>
 <body onload="GetBestFitTeamName(),GetTeamImage(),GetTeamInfo(),GetLeftColumn(),RenderNextEvent(),GetLeaderBoard() ">
-    <div>
+    
         <div id="wraper">
             <header>
           <nav>
@@ -293,12 +290,19 @@ function RenderNextEvent() {
                   </li>
                   
                   <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
+                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fan Clubs</a>
                   </li>
               </ul>
           </nav>
       </header>
+            <div class="innermenu">
+            <ul class="clearfix">
+                <li><a href="index.html" title="home" target="_self">Home</a> </li>
+                <li class="sep"></li>
+                <li><a href="userprofile.html" title="mediakit" target="_self">Profile</a> </li>
+            </ul>
         </div>
+        
         <!-- header ends -->
         <!-- container starts-->
         <div id="divLeaderBoard">
@@ -321,6 +325,8 @@ function RenderNextEvent() {
                 <div id="LiteralTeamInfo">
                 </div>
                 <div id="DivlLeftColumn">
+                </div>
+                 <div id="divSocialMeta" style="clear: both;">
                 </div>
                 <div>
                     <table id="TeamArticle" class="dataTables_filter">
@@ -348,30 +354,28 @@ function RenderNextEvent() {
                         </tbody>
                     </table>
                 </div>
-                </br>
+                <br/>
             </div>
-            <br>
-                <div id="divSocialMeta" style="clear: both;">
-                </div>
-            </br>
-            <div class="shareIcons">
-                <h1>
-                    Share This</h1>
-                <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
-                    target="_self">
-                    <img alt="facebook" src="images/facebook.png"/></a> <a href="http://www.myspace.com/kids2prosports"
-                        title="myspace" target="_self">
-                        <img alt="myspace" src="images/myspace.png"/></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
-                            title="yahoo" target="#">
-                            <img alt="yahoo" src="images/yahoo.png"/></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
-                                title="youtube" target="_self">
-                                <img alt="youtube" src="images/youtube.png"/></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
-                                    title="reddit" target="#">
-                                    <img alt="reddit" src="images/reddit.png"/></a> <a href="http://www.linkedin.com/in/kids2prosports"
-                                        title="linked" target="_self">
-                                        <img alt="linkedin" src="images/linkedin.png"/></a>
-            </div>
+         
+               
+      
             <br/>
+            <div class="shareIcons">
+                        <h1>Share This</h1>
+                        <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
+                            target="_self">
+                            <img alt="facebook" src="images/facebook.png"></a> <a href="http://www.myspace.com/kids2prosports"
+                                title="myspace" target="_self">
+                                <img alt="myspace" src="images/myspace.png"></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
+                                    title="yahoo" target="#">
+                                    <img alt="yahoo" src="images/yahoo.png"></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
+                                        title="youtube" target="_self">
+                                        <img alt="youtube" src="images/youtube.png"></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
+                                            title="reddit" target="#">
+                                            <img alt="reddit" src="images/reddit.png"></a> <a href="http://www.linkedin.com/in/kids2prosports"
+                                                title="linked" target="_self">
+                                                <img alt="linkedin" src="images/linkedin.png"></a>
+                    </div>
             <div>
                 <label style="font-family: Arial, Helvetica, sans-serif; font-size: 12px" id="lblNoOfFollewrs" />
             </div>
@@ -379,40 +383,7 @@ function RenderNextEvent() {
         </div>
     </div>
     <!-- container ends-->
-    <!-- footer starts -->
-    <div id="footerWrap">
-       <footer>
-              <a href="userprofile.html" title="home" target="_self">Home</a>
-              <a href="Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
-              <a href="CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
-              <a href="NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
-              <a href="ViewSubSport.html?SportName=Sports Health and Fitness" title="Sports Health & Fitness" target="_self">Sports Health & Fitness</a>
-              <a href="Write4Kids2ProSports.html"title="Write4K2PS" target="_self">Write4K2PS</a>
-              <a href="PersonalHomePage.html" title="PersonalHomePage" target="_self">PersonalHomePage</a>
-          </footer>
-          <div class="dots clear"></div>
-          <!-- Social Icon -->
-          <div class="clearfix">
-              <div class="copyright">&copy; Copyright 2010<br/>Kids2prosports.com</div>
-            <div class="socialIcons">
-                <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
-                    target="_self">
-                    <img alt="facebook" src="images/facebook.png"/></a> <a href="http://www.myspace.com/kids2prosports"
-                        title="myspace" target="_self">
-                        <img alt="myspace" src="images/myspace.png"/></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
-                            title="yahoo" target="#">
-                            <img alt="yahoo" src="images/yahoo.png"/></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
-                                title="youtube" target="_self">
-                                <img alt="youtube" src="images/youtube.png"/></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
-                                    title="reddit" target="#">
-                                    <img alt="reddit" src="images/reddit.png"/></a> <a href="http://www.linkedin.com/in/kids2prosports"
-                                        title="linked" target="_self">
-                                        <img alt="linkedin" src="images/linkedin.png"/></a>
-            </div>
-        </div>
-        <!-- Social Icon -->
-    </div>
-    <!-- footer ends -->
+   
   
 </body>
 </html>

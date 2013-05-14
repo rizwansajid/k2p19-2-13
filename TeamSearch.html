@@ -32,7 +32,7 @@
 		 "<a href=ViewTeam.html?Id=" + this.TeamId + ">View Team</a>"
 
 
-		]);
+                ]);
             });
 
             $('#SearchResult').dataTable({ //SearchResult is the id of the table
@@ -70,7 +70,7 @@
                 ParamData = { "Name": Name, "Sport": Sport, "Category": Category, "Gender": Gender };
 
                 $.ajax({
-                    url: 'http://2bvision.com/kids2promobile/TeamSearch.asmx/GetSearchTeam',
+                    url: 'http://2bvision.com/Kids2proSports/TeamSearch.asmx/GetSearchTeam',
                     type: 'POST',
                     data: JSON.stringify(ParamData),
                     contentType: "application/json; charset=utf-8",
@@ -130,7 +130,7 @@
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/createarticle.asmx/GetDropDownListSportCategory",
+    url: "http://2bvision.com/Kids2proSports/createarticle.asmx/GetDropDownListSportCategory",
     data: "{}",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -168,7 +168,7 @@
                 $.ajax(
 	{
 	    type: "POST",
-	    url: "http://2bvision.com/kids2promobile/SearchService.asmx/GetMinorSports",
+	    url: "http://2bvision.com/Kids2proSports/SearchService.asmx/GetMinorSports",
 	    data: JSON.stringify(data),
 	    contentType: "application/json; charset=utf-8",
 	    dataType: "json",
@@ -207,7 +207,7 @@
 {
 
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/createarticle.asmx/SqlDataSourceSportFromCategoryWithGender",
+    url: "http://2bvision.com/Kids2proSports/createarticle.asmx/SqlDataSourceSportFromCategoryWithGender",
 
     data: JSON.stringify(data),
     contentType: "application/json; charset=utf-8",
@@ -241,10 +241,10 @@
 
             }
         }
-			
 
 
-       
+
+
     </script>
 </head>
 <body>
@@ -263,7 +263,7 @@
                   </li>
                   
                   <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
+                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fan Clubs</a>
                   </li>
               </ul>
           </nav>
@@ -306,17 +306,13 @@
                 <table id="HeaderTale" class="display">
                     <thead>
                         <tr>
-                            <th width="80px">
-                                Team Name
+                            <th width="80px">Team Name
                             </th>
-                            <th width="80px">
-                                SportName
+                            <th width="80px">SportName
                             </th>
-                            <th width="80px">
-                                SportCategory
+                            <th width="80px">SportCategory
                             </th>
-                            <th width="80px">
-                                Gender / ID(optional)
+                            <th width="80px">Gender / ID(optional)
                             </th>
                         </tr>
                     </thead>
@@ -360,18 +356,12 @@
                     <table id="SearchResult" class="dataTables_filter">
                         <thead>
                             <tr>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                     </table>
@@ -390,56 +380,17 @@
                         English interpretations. If you would like to suggest a new sport home page, including
                         sport category, sport name, team, personalized sport home pages, gender, age, definitions,
                         links, high school, college or universities; identification to inclusion of their
-                        sport home pages and any keywords associated with those sports, please <a href="SubmitRequest.html">
-                            Click Here to Submit Your Request. </a>All of these options can be submitted
+                        sport home pages and any keywords associated with those sports, please <a href="SubmitRequest.html">Click Here to Submit Your Request. </a>All of these options can be submitted
                         in your languages of choice.
+                   
                     </p>
                 </div>
             </div>
             <!-- left area ends-->
-            <!-- advertisement area starts-->
-            <div class="contentRight fRight">
-            </div>
-            <!-- advertisement area ends-->
+
         </div>
         <!-- container ends-->
-        <!-- footer starts -->
-        <div id="footerWrap">
-            <footer>
-             <a href="userprofile.html" title="home" target="_self">Home</a>
-              <a href="Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
-              <a href="CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
-              <a href="NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
-              <a href="ViewSubSport.html?SportName=Sports Health and Fitness" title="Sports Health & Fitness" target="_self">Sports Health & Fitness</a>
-              <a href="Write4Kids2ProSports.html"title="Write4K2PS" target="_self">Write4K2PS</a>
-              <a href="PersonalHomePage.html" title="PersonalHomePage" target="_self">PersonalHomePage</a>
-          </footer>
-            <div class="dots clear">
-            </div>
-            <!-- Social Icon -->
-            <div class="clearfix">
-                <div class="copyright">
-                    &copy; Copyright 2010<br/>
-                    Kids2prosports.com</div>
-                <div class="socialIcons">
-                    <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
-                        target="_self">
-                        <img alt="facebook" src="images/facebook.png"/></a> <a href="http://www.myspace.com/kids2prosports"
-                            title="myspace" target="_self">
-                            <img alt="myspace" src="images/myspace.png"/></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
-                                title="yahoo" target="_self">
-                                <img alt="yahoo" src="images/yahoo.png"/></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
-                                    title="youtube" target="_self">
-                                    <img alt="youtube" src="images/youtube.png"/></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
-                                        title="reddit" target="_self">
-                                        <img alt="reddit" src="images/reddit.png"/></a> <a href="http://www.linkedin.com/in/kids2prosports"
-                                            title="linked" target="_self">
-                                            <img alt="linkedin" src="images/linkedin.png"/></a>
-                </div>
-            </div>
-            <!-- Social Icon -->
-        </div>
-        <!-- footer ends -->
+
     </div>
 </body>
 </html>

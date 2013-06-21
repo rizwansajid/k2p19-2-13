@@ -4,9 +4,10 @@
     id        = "www.kids2prosports.com"
     versionCode="55"
     version   = "1.0.1">
-
   <!-- versionCode is optional and Android only -->
-
+ 
+  <!--Phonegap version-->
+  <preference name="phonegap-version" value="2.7.0" />
   <name>KidsToProSports</name>
 
   <description>
